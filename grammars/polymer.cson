@@ -1,0 +1,13 @@
+'scopeName': 'text.html.polymer'
+
+'fileTypes': [ 'html' ]
+
+'name': 'Polymer'
+
+'patterns': [
+
+  { 'include': 'internal.text.html.polymer.inline' }
+  { 'include': 'internal.text.html.polymer' }
+  { 'include': 'text.html.basic' }
+
+]

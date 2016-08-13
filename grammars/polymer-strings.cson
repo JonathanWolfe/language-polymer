@@ -1,0 +1,38 @@
+'scopeName': 'internal.text.html.polymer.strings'
+
+'patterns': [
+
+  { 'include': '#string-single-quoted' }
+  { 'include': '#string-double-quoted' }
+
+]
+
+'repository':
+
+  'string-double-quoted':
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.html.polymer'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.html.polymer'
+    'name': 'string.quoted.double.html.polymer'
+    'patterns': [
+      { 'include': 'internal.text.html.polymer.inline' }
+    ]
+
+  'string-single-quoted':
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.html.polymer'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.html.polymer'
+    'name': 'string.quoted.single.html.polymer'
+    'patterns': [
+      { 'include': 'internal.text.html.polymer.inline' }
+    ]

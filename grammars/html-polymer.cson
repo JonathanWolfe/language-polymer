@@ -1,0 +1,96 @@
+'scopeName': 'internal.text.html.polymer'
+
+'patterns': [
+  {
+    'begin': '(</?)([a-zA-Z0-9.:-]+)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.begin.html.polymer'
+      '2':
+        'name': 'entity.name.tag.other.html.polymer'
+    'end': '(>)'
+    'endCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.end.html.polymer'
+    'name': 'meta.tag.other.html.polymer'
+    'patterns': [
+      {
+        'include': 'internal.text.html.polymer.inline'
+      }
+      {
+        'include': 'internal.text.html.polymer.curley'
+      }
+      {
+        'include': '#tag-stuff'
+      }
+    ]
+  }
+]
+'repository':
+  'string-double-quoted':
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.html.polymer'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.html.polymer'
+    'name': 'string.quoted.double.html.polymer'
+    'patterns': [
+      {
+        'include': 'internal.text.html.polymer.inline'
+      }
+      {
+        'include': 'internal.text.html.polymer.curley'
+      }
+    ]
+  'string-single-quoted':
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.html.polymer'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.html.polymer'
+    'name': 'string.quoted.single.html.polymer'
+    'patterns': [
+      {
+        'include': 'internal.text.html.polymer.inline'
+      }
+      {
+        'include': 'internal.text.html.polymer.curley'
+      }
+    ]
+    'end': '(?<=\'|")|(?=\\s|>)'
+    'name': 'meta.attribute-with-value.id.html.polymer'
+    'patterns': [
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+      {
+        'include': '#unquoted-attribute'
+      }
+    ]
+  'tag-stuff':
+    'patterns': [
+      {
+        'include': '#tag-id-attribute'
+      }
+      {
+        'include': '#tag-generic-attribute'
+      }
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+      {
+        'include': '#unquoted-attribute'
+      }
+    ]

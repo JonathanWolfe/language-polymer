@@ -1,0 +1,46 @@
+'scopeName': 'internal.text.html.polymer.subexp'
+
+'patterns': [
+
+  { 'include': '#polymer-subexp' }
+  { 'include': 'internal.text.html.polymer.strings' }
+  { 'include': '#polymer-attribute' }
+
+]
+
+'repository':
+
+  'polymer-subexp':
+    'name': 'meta.tag.inline.subexp.polymer'
+    'begin': '(\\()([\\w.-]+)'
+    'end': '(\\))'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.tag.polymer'
+      '2':
+        'name': 'entity.name.function.inline.polymer'
+    'patterns': [
+      { 'include': '$self' }
+    ]
+
+  'polymer-attribute':
+    'match': '\\b(?:(on-[\\w.-]+)(\\$?=)(?:(\')|("))([\\w.-]+)(?:(\')|(")))|(?:([\\w.-]+)(\\$?=))'
+    'captures':
+      '1':
+        'name': 'entity.keyword.control.polymer'
+      '2':
+        'name': 'punctuation.definition.tag.polymer'
+      '3':
+        'name': 'string.quoted.single.html.polymer'
+      '4':
+        'name': 'string.quoted.double.html.polymer'
+      '5':
+        'name': 'entity.name.function.inline.polymer'
+      '6':
+        'name': 'string.quoted.single.html.polymer'
+      '7':
+        'name': 'string.quoted.double.html.polymer'
+      '8':
+        'name': 'entity.other.attribute-name.html.polymer'
+      '9':
+        'name': 'punctuation.definition.tag.polymer'
