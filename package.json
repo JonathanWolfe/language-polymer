@@ -2,6 +2,12 @@
   "name": "language-polymer",
   "version": "0.1.0",
   "description": "Polymer syntax highlighting in Atom",
+  "keywords": [
+      "polymer",
+      "x-tags",
+      "custom elements",
+      "syntax"
+  ],
   "engines": {
     "atom": "*",
     "node": "*"
