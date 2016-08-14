@@ -10,20 +10,22 @@
 
   'polymer-inline':
     'name': 'meta.tag.inline.polymer'
-    'begin': '(\\{\\{)(?:(?:([\\w\\.]+)\\()+([\\w\\.,\\s*]+)(?:\\)+)|([\\w\\.]+)(::[\\w\\-]+)|([\\w\\.]+))'
-    'end': '(\\}\\})'
+    'begin': '((?:\\{\\{)|(?:\\[\\[))(\\!?)(?:(?:([\\w\\.]+)\\()+([\\w\\.,\\s*]+)(?:\\)+)|([\\w\\.]+)(::[\\w\\-]+)|([\\w\\.]+))'
+    'end': '((?:\\}\\})|(?:\\]\\]))'
     'captures':
       '1':
         'name': 'punctuation.definition.tag.inline.polymer'
       '2':
-        'name': 'support.function.builtin.inline.polymer'
+        'name': 'variable.other.property.js.polymer'
       '3':
-        'name': 'entity.name.function.inline.polymer'
+        'name': 'support.function.builtin.inline.polymer'
       '4':
         'name': 'entity.name.function.inline.polymer'
       '5':
-        'name': 'entity.keyword.control.polymer'
+        'name': 'entity.name.function.inline.polymer'
       '6':
+        'name': 'entity.keyword.control.polymer'
+      '7':
         'name': 'entity.name.function.inline.polymer'
     'patterns': [
       { 'include': 'internal.text.html.polymer.curley' }
