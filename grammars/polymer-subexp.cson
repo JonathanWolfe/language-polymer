@@ -24,7 +24,7 @@
     ]
 
   'polymer-attribute':
-    'match': '\\b(?:(on-[\\w.-]+)(\\$?=)(?:(\')|("))([\\w.-]+)(?:(\')|(")))|(?:([\\w.-]+)(\\$?=))'
+    'match': '\\b(?:(on-[\\w.-]+)(\\$?=)(?:(\')|("))([\\w.-]+)(?:(\')|(")))|(?:([\\w.-]+)(\\$?=))|([\\w.-]+)'
     'captures':
       '1':
         'name': 'entity.keyword.control.polymer'
@@ -35,7 +35,7 @@
       '4':
         'name': 'string.quoted.double.html.polymer'
       '5':
-        'name': 'entity.name.function.inline.polymer'
+        'name': 'support.function.builtin.inline.polymer'
       '6':
         'name': 'string.quoted.single.html.polymer'
       '7':
@@ -44,3 +44,5 @@
         'name': 'entity.other.attribute-name.html.polymer'
       '9':
         'name': 'punctuation.definition.tag.polymer'
+      '10':
+        'name': 'entity.other.attribute-name.html.polymer'
