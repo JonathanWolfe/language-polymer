@@ -2,29 +2,7 @@
 
 'patterns': [
 
-  { 'include': '#polymer-block-params' }
-  { 'include': '#polymer-as-keyword' }
   { 'include': 'internal.text.html.polymer.subexp' }
   { 'include': 'internal.text.html.polymer.strings' }
 
 ]
-
-'repository':
-
-  'polymer-block-params':
-    'name': 'keyword.block-params.polymer'
-    'begin': '(?<!\\()(\\))'
-    'beginCaptures':
-      '1':
-        'name': 'constant.other.symbol.begin.polymer'
-    'end': '(\\()(?!\\))'
-    'endCaptures':
-      '1':
-        'name': 'constant.other.symbol.end.polymer'
-    'patterns': [
-      { 'include': '#polymer-block-param' }
-    ]
-
-  'polymer-block-param':
-    'name': 'variable.other.polymer'
-    'match': '\\b([a-zA-Z0-9-_]+)\\b'
