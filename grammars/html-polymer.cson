@@ -2,11 +2,13 @@
 
 'patterns': [
   {
-    'begin': '(</?)([a-zA-Z0-9.:-]+)'
+    'begin': '(</?)(?:((?:template)|(?:dom-module)|([\\w-]+)))'
     'beginCaptures':
       '1':
         'name': 'punctuation.definition.tag.begin.html.polymer'
       '2':
+        'name': 'entity.support.class.polymer'
+      '3':
         'name': 'entity.name.tag.other.html.polymer'
     'end': '(>)'
     'endCaptures':
