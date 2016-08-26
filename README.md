@@ -2,7 +2,7 @@
 
 Polymer syntax highlighting in Atom
 
-Originally converted from the [Ember HTMLBars](https://atom.io/packages/language-ember-htmlbars) package.
+Originally converted from the [Ember HTMLBars](https://atom.io/packages/language-ember-htmlbars) package. Then rewritten using the [Language-HTML](https://atom.io/packages/language-html) package.
 
 Contributions are greatly appreciated. Please fork this repository and open a pull request make grammar tweaks, etc.
 
