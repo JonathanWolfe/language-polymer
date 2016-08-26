@@ -1,8 +1,0 @@
-'scopeName': 'internal.text.html.polymer.curley'
-
-'patterns': [
-
-  { 'include': 'internal.text.html.polymer.subexp' }
-  { 'include': 'internal.text.html.polymer.strings' }
-
-]

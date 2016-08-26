@@ -1,7 +1,0 @@
-'scopeName': 'internal.text.html.polymer.core'
-
-'patterns': [
-
-  { 'include': 'internal.text.html.polymer.inline' }
-
-]
