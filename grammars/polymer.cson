@@ -628,7 +628,7 @@
       }
     ]
   'tag-event-attribute':
-    'begin': '\\b(on-[\\w]+)\\b\\s*(\\$?=)'
+    'begin': '\\b(on-[\\w-]+)\\b\\s*(\\$?=)'
     'captures':
       '1':
         'name': 'entity.keyword.control.polymer'
