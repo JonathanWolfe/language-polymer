@@ -1,0 +1,897 @@
+{
+	"scopeName": "text.html.polymer",
+	"fileTypes": [
+		"ejs",
+		"htm",
+		"html",
+		"kit",
+		"shtml",
+		"tmpl",
+		"tpl",
+		"xhtml"
+	],
+	"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)",
+	"name": "Polymer",
+	"patterns": [
+		{
+			"begin": "(<)([a-zA-Z0-9:-]++)(?=[^>]*></\\2>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.html.polymer"
+				}
+			},
+			"end": "(>(\\s*<)/)(\\2)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "scope.between-tag-pair.html.polymer"
+				},
+				"3": {
+					"name": "entity.name.tag.html.polymer"
+				},
+				"4": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"name": "tag.any.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(<\\?)(xml)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.xml.html.polymer"
+				}
+			},
+			"end": "(\\?>)",
+			"name": "tag.preprocessor.xml.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-generic-attribute"
+				},
+				{
+					"include": "#string-double-quoted"
+				},
+				{
+					"include": "#string-single-quoted"
+				}
+			]
+		},
+		{
+			"begin": "<!--",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.html.polymer"
+				}
+			},
+			"end": "--\\s*>",
+			"name": "comment.block.html.polymer",
+			"patterns": [
+				{
+					"match": "--(?!-*\\s*>)",
+					"name": "invalid.illegal.bad-comments-or-CDATA.html.polymer"
+				},
+				{
+					"include": "#embedded-code"
+				}
+			]
+		},
+		{
+			"begin": "<!",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"end": ">",
+			"name": "tag.sgml.html.polymer",
+			"patterns": [
+				{
+					"begin": "(?i:DOCTYPE)",
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.doctype.html.polymer"
+						}
+					},
+					"end": "(?=>)",
+					"name": "tag.sgml.doctype.html.polymer",
+					"patterns": [
+						{
+							"match": "\"[^\">]*\"",
+							"name": "string.quoted.double.doctype.identifiers-and-DTDs.html.polymer"
+						}
+					]
+				},
+				{
+					"begin": "\\[CDATA\\[",
+					"end": "]](?=>)",
+					"name": "constant.other.inline-data.html.polymer"
+				},
+				{
+					"match": "(\\s*)(?!--|>)\\S(\\s*)",
+					"name": "invalid.illegal.bad-comments-or-CDATA.html.polymer"
+				}
+			]
+		},
+		{
+			"include": "#embedded-code"
+		},
+		{
+			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.style.html.polymer"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
+			"name": "source.css.embedded.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				},
+				{
+					"begin": "(>)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.html.polymer"
+						}
+					},
+					"end": "(?=</(?i:style))",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "source.css"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\btype\\s*=\\s*['\"]?text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)['\"]?)(?![^>]*/>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.script.html.polymer"
+				}
+			},
+			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
+			"endCaptures": {
+				"2": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"contentName": "text.embedded.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				},
+				{
+					"begin": "(?<!</(?:script|SCRIPT))(>)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.tag.html.polymer"
+						},
+						"2": {
+							"name": "entity.name.tag.script.html.polymer"
+						}
+					},
+					"end": "(</)((?i:script))",
+					"patterns": [
+						{
+							"include": "text.html.polymer.basic"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\btype\\s*=\\s*['\"]?text/coffeescript['\"]?)(?![^>]*/>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.script.html.polymer"
+				}
+			},
+			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
+			"endCaptures": {
+				"2": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"contentName": "source.coffee.embedded.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				},
+				{
+					"begin": "(?<!</(?:script|SCRIPT))(>)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.tag.html.polymer"
+						},
+						"2": {
+							"name": "entity.name.tag.script.html.polymer"
+						}
+					},
+					"end": "(</)((?i:script))",
+					"patterns": [
+						{
+							"captures": {
+								"1": {
+									"name": "punctuation.definition.comment.coffee"
+								}
+							},
+							"match": "(#).*?((?=</script)|$\\n?)",
+							"name": "comment.line.number-sign.coffee"
+						},
+						{
+							"include": "source.coffee"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.script.html.polymer"
+				}
+			},
+			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
+			"endCaptures": {
+				"2": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"contentName": "source.js.embedded.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				},
+				{
+					"begin": "(?<!</(?:script|SCRIPT))(>)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.tag.html.polymer"
+						},
+						"2": {
+							"name": "entity.name.tag.script.html.polymer"
+						}
+					},
+					"end": "(</)((?i:script))",
+					"patterns": [
+						{
+							"captures": {
+								"1": {
+									"name": "punctuation.definition.comment.js"
+								}
+							},
+							"match": "(//).*?((?=</script)|$\\n?)",
+							"name": "comment.line.double-slash.js"
+						},
+						{
+							"begin": "/\\*",
+							"captures": {
+								"0": {
+									"name": "punctuation.definition.comment.js"
+								}
+							},
+							"end": "\\*/|(?=</script)",
+							"name": "comment.block.js"
+						},
+						{
+							"include": "source.js"
+						}
+					]
+				}
+			]
+		},
+		{
+			"begin": "(</?)((?i:body|head|html)\\b)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.structure.any.html.polymer"
+				}
+			},
+			"end": "(>)",
+			"name": "tag.structure.any.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(</?)((?i:template|dom-module|content)\\b)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html.polymer"
+				},
+				"2": {
+					"name": "storage.entity.support.class.html.polymer"
+				}
+			},
+			"end": "(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html.polymer"
+				}
+			},
+			"name": "tag.block.component.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(</?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\\b)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.block.any.html.polymer"
+				}
+			},
+			"end": "(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html.polymer"
+				}
+			},
+			"name": "tag.block.any.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.inline.any.html.polymer"
+				}
+			},
+			"end": "((?: ?/)?>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html.polymer"
+				}
+			},
+			"name": "tag.inline.any.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(</?)([a-zA-Z0-9:-]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.other.html.polymer"
+				}
+			},
+			"end": "(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html.polymer"
+				}
+			},
+			"name": "tag.other.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"match": "<>",
+			"name": "invalid.illegal.incomplete.html.polymer"
+		}
+	],
+	"repository": {
+		"embedded-code": {
+			"patterns": [
+				{
+					"include": "#smarty"
+				},
+				{
+					"include": "#python"
+				},
+				{
+					"include": "#polymer"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"begin": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.entity.begin.html.polymer"
+						},
+						"2": {
+							"name": "entity.name.entity.name.section.html.polymer"
+						}
+					},
+					"end": ";",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.entity.end.html.polymer"
+						}
+					},
+					"name": "constant.character.entity.html.polymer"
+				},
+				{
+					"match": "&",
+					"name": "invalid.illegal.bad-ampersand.html.polymer"
+				}
+			]
+		},
+		"python": {
+			"begin": "(?:^\\s*)<\\?python(?!.*\\?>)",
+			"end": "\\?>(?:\\s*$\\n)?",
+			"name": "source.python.embedded.html.polymer",
+			"patterns": [
+				{
+					"include": "source.python"
+				}
+			]
+		},
+		"smarty": {
+			"patterns": [
+				{
+					"begin": "(\\{(literal)\\})",
+					"captures": {
+						"1": {
+							"name": "source.smarty.embedded.html.polymer"
+						},
+						"2": {
+							"name": "support.function.built-in.smarty"
+						}
+					},
+					"end": "(\\{/(literal)\\})"
+				},
+				{
+					"begin": "{{|{",
+					"disabled": 1,
+					"end": "}}|}",
+					"name": "source.smarty.embedded.html.polymer",
+					"patterns": [
+						{
+							"include": "source.smarty"
+						}
+					]
+				}
+			]
+		},
+		"polymer": {
+			"patterns": [
+				{
+					"include": "#binding-curly"
+				},
+				{
+					"include": "#binding-square"
+				}
+			]
+		},
+		"binding-curly": {
+			"begin": "\\{\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "italic.definition.punctuation.binding.curly.begin.html.polymer"
+				}
+			},
+			"end": "\\}\\}",
+			"endCaptures": {
+				"0": {
+					"name": "italic.definition.punctuation.binding.curly.end.html.polymer"
+				}
+			},
+			"name": "binding.curly.html.polymer",
+			"patterns": [
+				{
+					"include": "#polymer-function"
+				},
+				{
+					"include": "#polymer-variable-event"
+				},
+				{
+					"include": "#polymer-variable"
+				}
+			]
+		},
+		"binding-square": {
+			"begin": "\\[\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "italic.definition.punctuation.binding.square.begin.html.polymer"
+				}
+			},
+			"end": "\\]\\]",
+			"endCaptures": {
+				"0": {
+					"name": "italic.definition.punctuation.binding.square.end.html.polymer"
+				}
+			},
+			"name": "binding.square.html.polymer",
+			"patterns": [
+				{
+					"include": "#polymer-function"
+				},
+				{
+					"include": "#polymer-variable-event"
+				},
+				{
+					"include": "#polymer-conditional-negate"
+				},
+				{
+					"include": "#polymer-variable"
+				}
+			]
+		},
+		"polymer-function": {
+			"begin": "([\\w.-]+)(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "support.function.js.html.polymer"
+				},
+				"2": {
+					"name": "tag.punctuation.js.html.polymer"
+				}
+			},
+			"end": "(\\))",
+			"endCaptures": {
+				"0": {
+					"name": "tag.punctuation.js.html.polymer"
+				}
+			},
+			"name": "binding.function.html.polymer",
+			"patterns": [
+				{
+					"match": ",",
+					"name": "tag.punctuation.html.polymer"
+				},
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "support.function.html.polymer",
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.double.html.polymer"
+				},
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "",
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.single.html.polymer"
+				},
+				{
+					"include": "#polymer-conditional-negate"
+				},
+				{
+					"include": "#polymer-variable"
+				},
+				{
+					"include": "$self"
+				}
+			]
+		},
+		"polymer-conditional-negate": {
+			"match": "!",
+			"name": "variable.constant.js.html.polymer"
+		},
+		"polymer-variable-event": {
+			"match": "::[\\w.-]+",
+			"name": "entity.keyword.control.html.polymer"
+		},
+		"polymer-variable": {
+			"match": "[\\w.-]+",
+			"name": "support.function.any-method.constant.js.html.polymer"
+		},
+		"string-double-quoted": {
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.html.polymer"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.html.polymer"
+				}
+			},
+			"name": "string.quoted.double.html.polymer",
+			"patterns": [
+				{
+					"include": "#embedded-code"
+				},
+				{
+					"include": "#entities"
+				}
+			]
+		},
+		"string-single-quoted": {
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.html.polymer"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.html.polymer"
+				}
+			},
+			"name": "string.quoted.single.html.polymer",
+			"patterns": [
+				{
+					"include": "#embedded-code"
+				},
+				{
+					"include": "#entities"
+				}
+			]
+		},
+		"tag-generic-attribute": {
+			"match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)",
+			"name": "entity.other.attribute-name.html.polymer"
+		},
+		"tag-id-attribute": {
+			"begin": "\\b(id)\\b\\s*(\\$?=)",
+			"captures": {
+				"1": {
+					"name": "entity.other.attribute-name.id.html.polymer"
+				},
+				"2": {
+					"name": "punctuation.separator.attribute-name.html.polymer"
+				}
+			},
+			"end": "(?<='|\")|(?=\\s|>)",
+			"name": "attribute-with-value.id.html.polymer",
+			"patterns": [
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "toc-list.id.html.polymer",
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.double.html.polymer",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "#entities"
+						}
+					]
+				},
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "toc-list.id.html.polymer",
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.single.html.polymer",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "#entities"
+						}
+					]
+				},
+				{
+					"include": "#unquoted-attribute"
+				}
+			]
+		},
+		"tag-event-attribute": {
+			"begin": "\\b(on-[\\w-]+)\\b\\s*(\\$?=)",
+			"captures": {
+				"1": {
+					"name": "entity.keyword.control.html.polymer"
+				},
+				"2": {
+					"name": "punctuation.separator.attribute-name.html.polymer"
+				}
+			},
+			"end": "(?<='|\")|(?=\\s|>)",
+			"name": "attribute-with-value.event.html.polymer",
+			"patterns": [
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "support.function.html.polymer",
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.double.html.polymer"
+				},
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "support.function.html.polymer",
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.single.html.polymer"
+				}
+			]
+		},
+		"tag-as-attribute": {
+			"begin": "\\b(index-as|as)\\b\\s*(\\$?=)",
+			"captures": {
+				"1": {
+					"name": "entity.name.class.html.polymer"
+				},
+				"2": {
+					"name": "punctuation.separator.key-value.html.polymer"
+				}
+			},
+			"end": "(?<='|\")|(?=\\s|>)",
+			"name": "attribute-with-value.as.html.polymer",
+			"patterns": [
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "entity.name.section.html.polymer",
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.double.html.polymer"
+				},
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.html.polymer"
+						}
+					},
+					"contentName": "entity.name.section.html.polymer",
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.html.polymer"
+						}
+					},
+					"name": "string.quoted.single.html.polymer"
+				}
+			]
+		},
+		"tag-stuff": {
+			"patterns": [
+				{
+					"include": "#tag-id-attribute"
+				},
+				{
+					"include": "#tag-event-attribute"
+				},
+				{
+					"include": "#tag-as-attribute"
+				},
+				{
+					"include": "#tag-generic-attribute"
+				},
+				{
+					"include": "#string-double-quoted"
+				},
+				{
+					"include": "#string-single-quoted"
+				},
+				{
+					"include": "#embedded-code"
+				},
+				{
+					"include": "#unquoted-attribute"
+				}
+			]
+		},
+		"unquoted-attribute": {
+			"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+			"name": "string.unquoted.html.polymer"
+		}
+	}
+}
