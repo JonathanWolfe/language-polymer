@@ -1,6 +1,6 @@
 # language-polymer
 
-Polymer syntax highlighting in Atom & VS Code!
+Polymer syntax highlighting for Atom & VS Code!
 
 ### Atom
 
