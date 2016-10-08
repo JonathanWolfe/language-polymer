@@ -2,13 +2,13 @@
 
 Polymer syntax highlighting for Atom & VS Code!
 
-### Atom
+## Atom
 
 https://atom.io/packages/language-polymer
 
 Designed to look good with both [One Dark](https://atom.io/themes/one-dark-syntax) and [Atom Material](https://atom.io/themes/atom-material-syntax). Ob
 
-### VS Code
+## VS Code
 
 https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer
 
