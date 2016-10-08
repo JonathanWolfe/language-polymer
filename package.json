@@ -1,71 +1,71 @@
 {
-    "name": "language-polymer",
-    "version": "0.7.1",
-    "displayName": "Polymer Syntax",
-    "description": "Polymer syntax highlighting for Atom and VS Code",
-    "categories": [
-        "Languages"
-    ],
-    "keywords": [
-        "polymer",
-        "x-tags",
-        "custom elements",
-        "syntax"
-    ],
-    "author": "Jon Wolfe <@_JonWolfe>",
-    "publisher": "jonwolfe",
-    "engines": {
-        "atom": "*",
-        "vscode": "*",
-        "node": "*"
-    },
-    "extensionDependencies": [
-        "vscode.html"
-    ],
-    "galleryBanner": {
-        "color": "#31775a",
-        "theme": "dark"
-    },
-    "icon": "logo.png",
-    "contributes": {
-        "languages": [
-            {
-                "id": "polymer",
-                "aliases": [
-                    "Polymer",
-                    "polymer"
-                ],
-                "extensions": [
-                    "ejs",
-                    "htm",
-                    "html",
-                    "kit",
-                    "shtml",
-                    "tmpl",
-                    "tpl",
-                    "xhtml"
-                ]
-            }
+  "name": "language-polymer",
+  "version": "0.7.2",
+  "displayName": "Polymer Syntax",
+  "description": "Polymer syntax highlighting for Atom and VS Code",
+  "categories": [
+    "Languages"
+  ],
+  "keywords": [
+    "polymer",
+    "x-tags",
+    "custom elements",
+    "syntax"
+  ],
+  "author": "Jon Wolfe <@_JonWolfe>",
+  "publisher": "jonwolfe",
+  "engines": {
+    "atom": "*",
+    "vscode": "*",
+    "node": "*"
+  },
+  "extensionDependencies": [
+    "vscode.html"
+  ],
+  "galleryBanner": {
+    "color": "#31775a",
+    "theme": "dark"
+  },
+  "icon": "logo.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "polymer",
+        "aliases": [
+          "Polymer",
+          "polymer"
         ],
-        "grammars": [
-            {
-                "language": "polymer",
-                "scopeName": "text.html.polymer",
-                "path": "./syntaxes/polymer.json"
-            }
+        "extensions": [
+          "ejs",
+          "htm",
+          "html",
+          "kit",
+          "shtml",
+          "tmpl",
+          "tpl",
+          "xhtml"
         ]
-    },
-    "homepage": "http://atom.github.io/language-polymer",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jonathanwolfe/language-polymer.git"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jonathanwolfe/language-polymer/issues"
-    },
-    "devDependencies": {
-        "cson-parser": "latest",
-        "fs-extra": "^0.30.0"
-    }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "polymer",
+        "scopeName": "text.html.polymer",
+        "path": "./syntaxes/polymer.json"
+      }
+    ]
+  },
+  "homepage": "http://atom.github.io/language-polymer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathanwolfe/language-polymer.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanwolfe/language-polymer/issues"
+  },
+  "devDependencies": {
+    "cson-parser": "latest",
+    "fs-extra": "^0.30.0"
+  }
 }
