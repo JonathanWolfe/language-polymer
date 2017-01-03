@@ -1,6 +1,6 @@
 {
     "name": "language-polymer",
-    "version": "0.7.8",
+    "version": "0.7.9",
     "displayName": "Polymer Syntax",
     "description": "Polymer syntax highlighting for Atom and VS Code",
     "categories": [
@@ -63,6 +63,9 @@
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/jonathanwolfe/language-polymer/issues"
+    },
+    "scripts": {
+        "convert": "node convert-to-json.js"
     },
     "devDependencies": {
         "cson-parser": "latest",
