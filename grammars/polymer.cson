@@ -371,15 +371,13 @@
   'entities':
     'patterns': [
       {
-        'begin': '(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(?=;)'
-        'beginCaptures':
+        'match': '(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)'
+        'captures':
           '1':
             'name': 'punctuation.definition.entity.begin.html.polymer'
           '2':
-            'name': 'entity.name.section.html.polymer'
-        'end': ';'
-        'endCaptures':
-          '0':
+            'name': 'entity.name.entity.other.html.polymer'
+          '3':
             'name': 'punctuation.definition.entity.end.html.polymer'
         'name': 'constant.character.entity.html.polymer'
       }
