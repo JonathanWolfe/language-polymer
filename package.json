@@ -65,7 +65,8 @@
         "url": "https://github.com/jonathanwolfe/language-polymer/issues"
     },
     "scripts": {
-        "convert": "node convert-to-json.js"
+        "vscode-match-atom": "node convert-to-json.js",
+        "atom-match-vscode": "node convert-to-cson.js"
     },
     "devDependencies": {
         "cson-parser": "latest",
