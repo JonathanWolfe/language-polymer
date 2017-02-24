@@ -1,20 +1,19 @@
 {
-	"scopeName": "text.html.polymer",
 	"fileTypes": [
-		"ejs",
-		"htm",
 		"html",
-		"kit",
+		"htm",
 		"shtml",
+		"xhtml",
+		"inc",
 		"tmpl",
-		"tpl",
-		"xhtml"
+		"tpl"
 	],
+	"scopeName": "text.html.polymer",
 	"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)",
 	"name": "Polymer",
 	"patterns": [
 		{
-			"begin": "(<)([a-zA-Z0-9:-]++)(?=[^>]*></\\2>)",
+			"begin": "(<)([a-zA-Z0-9:\\-]++)(?=[^>]*></\\2>)",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.html.polymer"
@@ -23,13 +22,13 @@
 					"name": "entity.name.tag.html.polymer"
 				}
 			},
-			"end": "(>(\\s*<)/)(\\2)(>)",
+			"end": "(>(<)/)(\\2)(>)",
 			"endCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.html.polymer"
 				},
 				"2": {
-					"name": "scope.between-tag-pair.html.polymer"
+					"name": "meta.scope.between-tag-pair.html.polymer"
 				},
 				"3": {
 					"name": "entity.name.tag.html.polymer"
@@ -38,7 +37,7 @@
 					"name": "punctuation.definition.tag.html.polymer"
 				}
 			},
-			"name": "tag.any.html.polymer",
+			"name": "meta.tag.any.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -56,7 +55,7 @@
 				}
 			},
 			"end": "(\\?>)",
-			"name": "tag.preprocessor.xml.html.polymer",
+			"name": "meta.tag.preprocessor.xml.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-generic-attribute"
@@ -80,7 +79,7 @@
 			"name": "comment.block.html.polymer",
 			"patterns": [
 				{
-					"match": "--(?!-*\\s*>)",
+					"match": "--",
 					"name": "invalid.illegal.bad-comments-or-CDATA.html.polymer"
 				},
 				{
@@ -96,7 +95,7 @@
 				}
 			},
 			"end": ">",
-			"name": "tag.sgml.html.polymer",
+			"name": "meta.tag.sgml.html.polymer",
 			"patterns": [
 				{
 					"begin": "(?i:DOCTYPE)",
@@ -106,7 +105,7 @@
 						}
 					},
 					"end": "(?=>)",
-					"name": "tag.sgml.doctype.html.polymer",
+					"name": "meta.tag.sgml.doctype.html.polymer",
 					"patterns": [
 						{
 							"match": "\"[^\">]*\"",
@@ -142,12 +141,12 @@
 				}
 			},
 			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
-			"name": "source.css.embedded.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
 				},
 				{
+					"contentName": "source.css.embedded.html.polymer",
 					"begin": "(>)",
 					"beginCaptures": {
 						"1": {
@@ -167,7 +166,7 @@
 			]
 		},
 		{
-			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\btype\\s*=\\s*['\"]?text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)['\"]?)(?![^>]*/>)",
+			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)(?![^>]*(?i:type.?=.?text/((?!javascript).*)))",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.html.polymer"
@@ -182,101 +181,12 @@
 					"name": "punctuation.definition.tag.html.polymer"
 				}
 			},
-			"contentName": "text.embedded.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
 				},
 				{
-					"begin": "(?<!</(?:script|SCRIPT))(>)",
-					"captures": {
-						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
-						},
-						"2": {
-							"name": "entity.name.tag.script.html.polymer"
-						}
-					},
-					"end": "(</)((?i:script))",
-					"patterns": [
-						{
-							"include": "text.html.polymer.basic"
-						}
-					]
-				}
-			]
-		},
-		{
-			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\btype\\s*=\\s*['\"]?text/coffeescript['\"]?)(?![^>]*/>)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
-				},
-				"2": {
-					"name": "entity.name.tag.script.html.polymer"
-				}
-			},
-			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
-			"endCaptures": {
-				"2": {
-					"name": "punctuation.definition.tag.html.polymer"
-				}
-			},
-			"contentName": "source.coffee.embedded.html.polymer",
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				},
-				{
-					"begin": "(?<!</(?:script|SCRIPT))(>)",
-					"captures": {
-						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
-						},
-						"2": {
-							"name": "entity.name.tag.script.html.polymer"
-						}
-					},
-					"end": "(</)((?i:script))",
-					"patterns": [
-						{
-							"captures": {
-								"1": {
-									"name": "punctuation.definition.comment.coffee"
-								}
-							},
-							"match": "(#).*?((?=</script)|$\\n?)",
-							"name": "comment.line.number-sign.coffee"
-						},
-						{
-							"include": "source.coffee"
-						}
-					]
-				}
-			]
-		},
-		{
-			"begin": "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
-				},
-				"2": {
-					"name": "entity.name.tag.script.html.polymer"
-				}
-			},
-			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
-			"endCaptures": {
-				"2": {
-					"name": "punctuation.definition.tag.html.polymer"
-				}
-			},
-			"contentName": "source.js.embedded.html.polymer",
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				},
-				{
+					"contentName": "source.js.embedded.html.polymer",
 					"begin": "(?<!</(?:script|SCRIPT))(>)",
 					"captures": {
 						"1": {
@@ -315,7 +225,7 @@
 			]
 		},
 		{
-			"begin": "(</?)((?i:body|head|html)(?!-)\\b)",
+			"begin": "(</?)((?i:body|head|html)(?=\\s|\\\\|>))",
 			"captures": {
 				"1": {
 					"name": "punctuation.definition.tag.html.polymer"
@@ -325,7 +235,7 @@
 				}
 			},
 			"end": "(>)",
-			"name": "tag.structure.any.html.polymer",
+			"name": "meta.tag.structure.any.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -333,13 +243,13 @@
 			]
 		},
 		{
-			"begin": "(</?)((?i:template|dom-module|content)(?!-)\\b)",
+			"begin": "(</?)((?i:dom-module|template|content|slot)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.begin.html.polymer"
 				},
 				"2": {
-					"name": "storage.entity.support.class.html.polymer"
+					"name": "entity.special.support.name.tag.html.polymer"
 				}
 			},
 			"end": "(>)",
@@ -348,7 +258,7 @@
 					"name": "punctuation.definition.tag.end.html.polymer"
 				}
 			},
-			"name": "tag.block.component.html.polymer",
+			"name": "meta.tag.special.component.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -356,7 +266,7 @@
 			]
 		},
 		{
-			"begin": "(</?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)(?!-)\\b)",
+			"begin": "(</?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.begin.html.polymer"
@@ -371,7 +281,7 @@
 					"name": "punctuation.definition.tag.end.html.polymer"
 				}
 			},
-			"name": "tag.block.any.html.polymer",
+			"name": "meta.tag.block.any.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -379,7 +289,7 @@
 			]
 		},
 		{
-			"begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)(?!-)\\b)",
+			"begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.begin.html.polymer"
@@ -394,7 +304,7 @@
 					"name": "punctuation.definition.tag.end.html.polymer"
 				}
 			},
-			"name": "tag.inline.any.html.polymer",
+			"name": "meta.tag.inline.any.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -402,7 +312,7 @@
 			]
 		},
 		{
-			"begin": "(</?)([a-zA-Z0-9:-]+)",
+			"begin": "(</?)([a-zA-Z0-9:\\-]+)",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.begin.html.polymer"
@@ -417,7 +327,7 @@
 					"name": "punctuation.definition.tag.end.html.polymer"
 				}
 			},
-			"name": "tag.other.html.polymer",
+			"name": "meta.tag.other.html.polymer",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -435,12 +345,6 @@
 	"repository": {
 		"embedded-code": {
 			"patterns": [
-				{
-					"include": "#smarty"
-				},
-				{
-					"include": "#python"
-				},
 				{
 					"include": "#polymer"
 				}
@@ -469,43 +373,6 @@
 				}
 			]
 		},
-		"python": {
-			"begin": "(?:^\\s*)<\\?python(?!.*\\?>)",
-			"end": "\\?>(?:\\s*$\\n)?",
-			"name": "source.python.embedded.html.polymer",
-			"patterns": [
-				{
-					"include": "source.python"
-				}
-			]
-		},
-		"smarty": {
-			"patterns": [
-				{
-					"begin": "(\\{(literal)\\})",
-					"captures": {
-						"1": {
-							"name": "source.smarty.embedded.html.polymer"
-						},
-						"2": {
-							"name": "support.function.built-in.smarty"
-						}
-					},
-					"end": "(\\{/(literal)\\})"
-				},
-				{
-					"begin": "{{|{",
-					"disabled": 1,
-					"end": "}}|}",
-					"name": "source.smarty.embedded.html.polymer",
-					"patterns": [
-						{
-							"include": "source.smarty"
-						}
-					]
-				}
-			]
-		},
 		"polymer": {
 			"patterns": [
 				{
@@ -520,13 +387,13 @@
 			"begin": "\\{\\{",
 			"beginCaptures": {
 				"0": {
-					"name": "italic.definition.punctuation.binding.curly.begin.html.polymer"
+					"name": "italic.punctuation.definition.binding.curly.begin.html.polymer"
 				}
 			},
 			"end": "\\}\\}",
 			"endCaptures": {
 				"0": {
-					"name": "italic.definition.punctuation.binding.curly.end.html.polymer"
+					"name": "italic.punctuation.definition.binding.curly.end.html.polymer"
 				}
 			},
 			"name": "binding.curly.html.polymer",
@@ -546,13 +413,13 @@
 			"begin": "\\[\\[",
 			"beginCaptures": {
 				"0": {
-					"name": "italic.definition.punctuation.binding.square.begin.html.polymer"
+					"name": "italic.punctuation.definition.binding.square.begin.html.polymer"
 				}
 			},
 			"end": "\\]\\]",
 			"endCaptures": {
 				"0": {
-					"name": "italic.definition.punctuation.binding.square.end.html.polymer"
+					"name": "italic.punctuation.definition.binding.square.end.html.polymer"
 				}
 			},
 			"name": "binding.square.html.polymer",
@@ -575,23 +442,23 @@
 			"begin": "([\\w.-]+)(\\()",
 			"beginCaptures": {
 				"1": {
-					"name": "support.function.js.html.polymer"
+					"name": "support.function.js.polymer"
 				},
 				"2": {
-					"name": "tag.punctuation.js.html.polymer"
+					"name": "meta.brace.round.js.polymer"
 				}
 			},
 			"end": "(\\))",
 			"endCaptures": {
 				"0": {
-					"name": "tag.punctuation.js.html.polymer"
+					"name": "meta.brace.round.js.polymer"
 				}
 			},
 			"name": "binding.function.html.polymer",
 			"patterns": [
 				{
 					"match": ",",
-					"name": "tag.punctuation.html.polymer"
+					"name": "punctuation.separator.comma.js.html.polymer"
 				},
 				{
 					"begin": "\"",
@@ -638,15 +505,15 @@
 		},
 		"polymer-conditional-negate": {
 			"match": "!",
-			"name": "variable.constant.js.html.polymer"
+			"name": "keyword.operator.logical.not.js.html.polymer"
 		},
 		"polymer-variable-event": {
 			"match": "::[\\w.-]+",
-			"name": "entity.keyword.control.html.polymer"
+			"name": "support.function.event-handler.js.html.polymer"
 		},
 		"polymer-variable": {
 			"match": "[\\w.-]+",
-			"name": "support.function.any-method.constant.js.html.polymer"
+			"name": "meta.definition.variable.js.html.polymer variable.other.readwrite.js.html.polymer"
 		},
 		"string-double-quoted": {
 			"begin": "\"",
@@ -699,17 +566,17 @@
 			"name": "entity.other.attribute-name.html.polymer"
 		},
 		"tag-id-attribute": {
-			"begin": "\\b(id)\\b\\s*(\\$?=)",
+			"begin": "\\b(id)\\b\\s*(=)",
 			"captures": {
 				"1": {
 					"name": "entity.other.attribute-name.id.html.polymer"
 				},
 				"2": {
-					"name": "punctuation.separator.attribute-name.html.polymer"
+					"name": "punctuation.separator.key-value.html.polymer"
 				}
 			},
-			"end": "(?<='|\")|(?=\\s|>)",
-			"name": "attribute-with-value.id.html.polymer",
+			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
+			"name": "meta.attribute-with-value.id.html.polymer",
 			"patterns": [
 				{
 					"begin": "\"",
@@ -718,7 +585,7 @@
 							"name": "punctuation.definition.string.begin.html.polymer"
 						}
 					},
-					"contentName": "toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html.polymer",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
@@ -742,7 +609,7 @@
 							"name": "punctuation.definition.string.begin.html.polymer"
 						}
 					},
-					"contentName": "toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html.polymer",
 					"end": "'",
 					"endCaptures": {
 						"0": {
@@ -760,22 +627,28 @@
 					]
 				},
 				{
-					"include": "#unquoted-attribute"
+					"captures": {
+						"0": {
+							"name": "meta.toc-list.id.html.polymer"
+						}
+					},
+					"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+					"name": "string.unquoted.html.polymer"
 				}
 			]
 		},
 		"tag-event-attribute": {
-			"begin": "\\b(on-[\\w-]+)\\b\\s*(\\$?=)",
+			"begin": "\\b(on-[\\a-zA-Z0-9:-]+)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "entity.keyword.control.html.polymer"
+					"name": "support.function.event-handler.js.html.polymer"
 				},
 				"2": {
-					"name": "punctuation.separator.attribute-name.html.polymer"
+					"name": "punctuation.separator.key-value.html.polymer"
 				}
 			},
 			"end": "(?<='|\")|(?=\\s|>)",
-			"name": "attribute-with-value.event.html.polymer",
+			"name": "meta.attribute-with-value.event.html.polymer",
 			"patterns": [
 				{
 					"begin": "\"",
@@ -815,14 +688,14 @@
 			"begin": "\\b(index-as|as)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "entity.name.class.html.polymer"
+					"name": "entity.other.attribute-name.as.html.polymer"
 				},
 				"2": {
 					"name": "punctuation.separator.key-value.html.polymer"
 				}
 			},
-			"end": "(?<='|\")|(?=\\s|>)",
-			"name": "attribute-with-value.as.html.polymer",
+			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
+			"name": "meta.attribute-with-value.as.html.polymer",
 			"patterns": [
 				{
 					"begin": "\"",
@@ -831,14 +704,22 @@
 							"name": "punctuation.definition.string.begin.html.polymer"
 						}
 					},
-					"contentName": "entity.name.section.html.polymer",
+					"contentName": "meta.toc-list.id.html.polymer",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.end.html.polymer"
 						}
 					},
-					"name": "string.quoted.double.html.polymer"
+					"name": "string.quoted.double.html.polymer",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "#entities"
+						}
+					]
 				},
 				{
 					"begin": "'",
@@ -847,14 +728,31 @@
 							"name": "punctuation.definition.string.begin.html.polymer"
 						}
 					},
-					"contentName": "entity.name.section.html.polymer",
+					"contentName": "meta.toc-list.id.html.polymer",
 					"end": "'",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.end.html.polymer"
 						}
 					},
-					"name": "string.quoted.single.html.polymer"
+					"name": "string.quoted.single.html.polymer",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "#entities"
+						}
+					]
+				},
+				{
+					"captures": {
+						"0": {
+							"name": "meta.toc-list.id.html.polymer"
+						}
+					},
+					"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+					"name": "string.unquoted.html.polymer"
 				}
 			]
 		},
