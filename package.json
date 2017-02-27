@@ -4,13 +4,16 @@
     "displayName": "Polymer Syntax",
     "description": "Polymer syntax highlighting for Atom and VS Code",
     "categories": [
-        "Languages"
+        "Languages",
+        "Themes"
     ],
     "keywords": [
         "polymer",
         "x-tags",
         "custom elements",
-        "syntax"
+        "syntax",
+        "theme",
+        "highlighting"
     ],
     "author": "Jon Wolfe <@_JonWolfe>",
     "publisher": "jonwolfe",
@@ -52,6 +55,13 @@
                 "language": "polymer",
                 "scopeName": "text.html.polymer",
                 "path": "./syntaxes/polymer.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Polymer Syntax Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/polymer-syntax.tmTheme"
             }
         ]
     },
