@@ -61,7 +61,7 @@
             {
                 "label": "Polymer Syntax Theme",
                 "uiTheme": "vs-dark",
-                "path": "./themes/polymer-syntax.tmTheme"
+                "path": "./themes/polymer-syntax-theme.tmTheme"
             }
         ]
     },
