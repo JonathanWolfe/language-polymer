@@ -806,7 +806,7 @@
 			<key>name</key>
 			<string>Event Attribute</string>
 			<key>scope</key>
-			<string>support.function.event-handler.js.html.polymer</string>
+			<string>support.function.event-handler.attribute.js.html.polymer, support.function.event-handler.binding.js.html.polymer</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
