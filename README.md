@@ -2,6 +2,10 @@
 
 Polymer syntax highlighting for Atom & VS Code!
 
+# Polymer Syntax Theme
+
+A syntax theme to be used with [language-polymer](https://github.com/jonathanwolfe/language-polymer) to give the best visual experience when working with [Polymer](https://polymer-project.org) or even [Web Components](https://www.webcomponents.org) in general.
+
 ## Atom
 
 https://atom.io/packages/language-polymer
@@ -21,6 +25,8 @@ Looks best with: [Material Ocean Next Theme +](https://marketplace.visualstudio.
 ### History
 
 Originally converted from the [Ember HTMLBars](https://atom.io/packages/language-ember-htmlbars) package. Then rewritten using the [Language-HTML](https://atom.io/packages/language-html) package.
+
+This theme was based on the theme ["Made of Code" by Brian Yu](https://github.com/brian-yu/made-of-code-vscode). Almost everything is the same except for some additional selectors to correctly style the polymer binding related syntax.
 
 ### Contributing
 
