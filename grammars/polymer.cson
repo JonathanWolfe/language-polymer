@@ -240,12 +240,30 @@ patterns: [
     ]
   }
   {
-    begin: "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)(?=\\s|\\\\|>))"
+    begin: "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|map|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)(?=\\s|\\\\|>))"
     beginCaptures:
       "1":
         name: "punctuation.definition.tag.begin.html.polymer"
       "2":
         name: "entity.name.tag.inline.any.html.polymer"
+    end: "((?: ?/)?>)"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.tag.end.html.polymer"
+    name: "meta.tag.inline.any.html.polymer"
+    patterns: [
+      {
+        include: "#tag-stuff"
+      }
+    ]
+  }
+  {
+    begin: "(</?)((?i:link|meta)(?=\\s|\\\\|>))"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.tag.begin.html.polymer"
+      "2":
+        name: "entity.name.tag.link-meta.any.html.polymer"
     end: "((?: ?/)?>)"
     endCaptures:
       "1":
@@ -458,11 +476,69 @@ repository:
         include: "#entities"
       }
     ]
-  "tag-generic-attribute":
-    match: "(?<=[^=])\\b([a-zA-Z0-9:-]+)"
+  "tag-boolean-attribute":
+    match: "(?<=[^=])\\b([a-zA-Z0-9:-]+)(?:\\s+|>)"
     name: "entity.other.attribute-name.html.polymer"
+  "tag-generic-attribute":
+    begin: "\\b([a-zA-Z0-9:-]+)\\b\\s*(\\$?=)"
+    captures:
+      "1":
+        name: "entity.other.attribute-name.html.polymer"
+      "2":
+        name: "punctuation.separator.key-value.html.polymer"
+    end: "(?!\\G)(?<='|\"|[^\\s<>/])"
+    name: "meta.attribute-with-value.other.html.polymer"
+    patterns: [
+      {
+        begin: "\""
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html.polymer"
+        contentName: "meta.toc-list.other.html.polymer"
+        end: "\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html.polymer"
+        name: "string.quoted.double.html.polymer"
+        patterns: [
+          {
+            include: "#embedded-code"
+          }
+          {
+            include: "#entities"
+          }
+        ]
+      }
+      {
+        begin: "'"
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.html.polymer"
+        contentName: "meta.toc-list.other.html.polymer"
+        end: "'"
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.html.polymer"
+        name: "string.quoted.single.html.polymer"
+        patterns: [
+          {
+            include: "#embedded-code"
+          }
+          {
+            include: "#entities"
+          }
+        ]
+      }
+      {
+        captures:
+          "0":
+            name: "meta.toc-list.other.html.polymer"
+        match: "(?<==)(?:[^\\s<>/'\"]|/(?!>))+"
+        name: "string.unquoted.html.polymer"
+      }
+    ]
   "tag-id-attribute":
-    begin: "\\b(id)\\b\\s*(=)"
+    begin: "\\b(id)\\b\\s*(\\$?=)"
     captures:
       "1":
         name: "entity.other.attribute-name.id.html.polymer"
@@ -622,6 +698,9 @@ repository:
       }
       {
         include: "#tag-as-attribute"
+      }
+      {
+        include: "#tag-boolean-attribute"
       }
       {
         include: "#tag-generic-attribute"
