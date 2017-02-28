@@ -1,6 +1,6 @@
 {
     "name": "language-polymer",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "displayName": "Polymer Syntax",
     "description": "Polymer syntax highlighting for Atom and VS Code",
     "categories": [
