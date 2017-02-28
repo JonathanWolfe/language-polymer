@@ -436,7 +436,7 @@ repository:
     name: "keyword.operator.logical.not.js.html.polymer"
   "polymer-variable-event":
     match: "::[\\w.-]+"
-    name: "support.function.event-handler.js.html.polymer"
+    name: "support.function.event-handler.binding.js.html.polymer"
   "polymer-variable":
     match: "[\\w.-]+"
     name: "meta.definition.variable.js.html.polymer variable.other.readwrite.js.html.polymer"
@@ -596,13 +596,13 @@ repository:
       }
     ]
   "tag-event-attribute":
-    begin: "\\b(on-[\\a-zA-Z0-9:-]+)\\b\\s*(\\$?=)"
+    begin: "\\b(on-[a-zA-Z0-9:-]+)\\b\\s*(\\$?=)"
     captures:
       "1":
-        name: "support.function.event-handler.js.html.polymer"
+        name: "support.function.event-handler.attribute.js.html.polymer"
       "2":
         name: "punctuation.separator.key-value.html.polymer"
-    end: "(?<='|\")|(?=\\s|>)"
+    end: "(?!\\G)(?<='|\"|[^\\s<>/])"
     name: "meta.attribute-with-value.event.html.polymer"
     patterns: [
       {
