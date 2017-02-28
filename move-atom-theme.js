@@ -7,7 +7,5 @@ fs.move( './polymer-theme/index.less', './index.less', { overwrite: true }, func
 
     fs.move( './polymer-theme/styles', './styles', { overwrite: true }, function stylesDone( err ) {
         if ( err ) throw err;
-
-        console.log( 'Done moving files' );
     })
 })
