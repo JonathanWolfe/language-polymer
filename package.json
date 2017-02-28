@@ -76,7 +76,8 @@
     },
     "scripts": {
         "vscode-match-atom": "node convert-to-json.js",
-        "atom-match-vscode": "node convert-to-cson.js"
+        "atom-match-vscode": "node convert-to-cson.js",
+        "update-atom-theme": "apm init --theme polymer-theme --convert themes/polymer-syntax-theme.tmtheme && node move-atom-theme.js"
     },
     "devDependencies": {
         "cson-parser": "latest",
