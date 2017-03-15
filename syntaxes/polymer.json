@@ -13,38 +13,6 @@
 	"name": "Polymer",
 	"patterns": [
 		{
-			"begin": "(<)([a-zA-Z0-9:\\-]++)(?=[^>]*></\\2>)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
-				},
-				"2": {
-					"name": "entity.name.tag.html.polymer"
-				}
-			},
-			"end": "(>(<)/)(\\2)(>)",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
-				},
-				"2": {
-					"name": "meta.scope.between-tag-pair.html.polymer"
-				},
-				"3": {
-					"name": "entity.name.tag.html.polymer"
-				},
-				"4": {
-					"name": "punctuation.definition.tag.html.polymer"
-				}
-			},
-			"name": "meta.tag.any.html.polymer",
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
-		},
-		{
 			"begin": "(<\\?)(xml)",
 			"captures": {
 				"1": {
@@ -358,6 +326,38 @@
 			]
 		},
 		{
+			"begin": "(<)([a-zA-Z0-9:\\-]++)(?=[^>]*>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.html.polymer"
+				}
+			},
+			"end": "(>(<)/)(\\2)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "meta.scope.between-tag-pair.html.polymer"
+				},
+				"3": {
+					"name": "entity.name.tag.html.polymer"
+				},
+				"4": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"name": "meta.tag.any.html.polymer",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
 			"include": "#entities"
 		},
 		{
@@ -585,8 +585,8 @@
 			]
 		},
 		"tag-boolean-attribute": {
-			"match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)(?:\\s+|>)",
-			"name": "entity.other.attribute-name.html.polymer"
+			"match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)(?=\\s+|>)",
+			"name": "entity.other.attribute-name.boolean.html.polymer"
 		},
 		"tag-generic-attribute": {
 			"begin": "\\b([a-zA-Z0-9:-]+)\\b\\s*(\\$?=)",
