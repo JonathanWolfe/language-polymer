@@ -2,10 +2,18 @@
 
 var fs = require( 'fs-extra' );
 
-fs.move( './polymer-theme/index.less', './index.less', { overwrite: true }, function indexDone( err ) {
+fs.remove( './index.less', function indexRemoved( err ) {
     if ( err ) throw err;
 
-    fs.move( './polymer-theme/styles', './styles', { overwrite: true }, function stylesDone( err ) {
+    fs.move( './polymer-theme/index.less', './index.less', function indexDone( err ) {
+        if ( err ) throw err;
+    })
+});
+
+fs.remove( './styles', function stylesCleared( err ){
+    if ( err ) throw err
+
+    fs.move( './polymer-theme/styles', './styles', function stylesDone( err ) {
         if ( err ) throw err;
     })
 })
