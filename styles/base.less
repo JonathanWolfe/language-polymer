@@ -122,7 +122,7 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 }
 
 .string .variable {
-  color: #8A9A95;
+  color: #689CFF;
 }
 
 .support.function {
@@ -280,8 +280,16 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #689CFF;
 }
 
-.meta.template.expression.js .variable.other.property.js {
+.meta.template.expression.js .variable.other.property.js, .meta.template.expression.js .variable.other.object.property.js {
   color: #689CFF;
+}
+
+.meta.template.expression.js .meta.brace.round.js, .meta.template.expression.js .meta.brace.curly.js, .meta.template.expression.js .punctuation.accessor.js {
+  color: #FFFFFF;
+}
+
+.punctuation.definition.template-expression.begin.js, .punctuation.definition.template-expression.end.js {
+  color: #FFFFFF;
 }
 
 .entity.name.tag.script.html.polymer, .entity.name.tag.link-meta.any.html.polymer {

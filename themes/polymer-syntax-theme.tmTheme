@@ -244,7 +244,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8A9A95</string>
+				<string>#689CFF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -729,11 +729,33 @@
 			<key>name</key>
 			<string>JS Template String Object Property</string>
 			<key>scope</key>
-			<string>meta.template.expression.js variable.other.property.js</string>
+			<string>meta.template.expression.js variable.other.property.js, meta.template.expression.js variable.other.object.property.js</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#689CFF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>JS Template String Punctuation</string>
+			<key>scope</key>
+			<string>meta.template.expression.js meta.brace.round.js, meta.template.expression.js meta.brace.curly.js, meta.template.expression.js punctuation.accessor.js</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFFFFF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>JS Template Expression Punctuation</string>
+			<key>scope</key>
+			<string>punctuation.definition.template-expression.begin.js, punctuation.definition.template-expression.end.js</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFFFFF</string>
 			</dict>
 		</dict>
 
