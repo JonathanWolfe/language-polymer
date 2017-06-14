@@ -1,86 +1,67 @@
 {
-    "name": "language-polymer",
-    "version": "0.8.4",
-    "displayName": "Polymer Syntax",
-    "description": "Polymer syntax highlighting for Atom and VS Code",
-    "categories": [
-        "Languages",
-        "Themes"
-    ],
-    "keywords": [
-        "polymer",
-        "x-tags",
-        "custom elements",
-        "syntax",
-        "theme",
-        "highlighting"
-    ],
-    "author": "Jon Wolfe <@_JonWolfe>",
-    "publisher": "jonwolfe",
-    "engines": {
-        "atom": "*",
-        "vscode": "*",
-        "node": "*"
-    },
-    "extensionDependencies": [
-        "vscode.html"
-    ],
-    "galleryBanner": {
-        "color": "#31775a",
-        "theme": "dark"
-    },
-    "icon": "logo.png",
-    "contributes": {
-        "languages": [
-            {
-                "id": "polymer",
-                "aliases": [
-                    "Polymer",
-                    "polymer"
-                ],
-                "extensions": [
-                    "ejs",
-                    "htm",
-                    "html",
-                    "kit",
-                    "shtml",
-                    "tmpl",
-                    "tpl",
-                    "xhtml"
-                ]
-            }
-        ],
-        "grammars": [
-            {
-                "language": "polymer",
-                "scopeName": "text.html.polymer",
-                "path": "./syntaxes/polymer.json"
-            }
-        ],
-        "themes": [
-            {
-                "label": "Polymer Syntax Theme",
-                "uiTheme": "vs-dark",
-                "path": "./themes/polymer-syntax-theme.tmTheme"
-            }
-        ]
-    },
-    "homepage": "http://atom.github.io/language-polymer",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jonathanwolfe/language-polymer.git"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jonathanwolfe/language-polymer/issues"
-    },
-    "scripts": {
-        "vscode-match-atom": "node convert-to-json.js",
-        "atom-match-vscode": "node convert-to-cson.js",
-        "update-atom-theme": "apm init --theme polymer-theme --convert themes/polymer-syntax-theme.tmtheme && node move-atom-theme.js"
-    },
-    "devDependencies": {
-        "cson-parser": "latest",
-        "fs-extra": "^0.30.0"
-    }
+	"name": "polymer-syntax",
+	"displayName": "Polymer Syntax",
+	"description": "Syntax Highlighting and theming for Polymer components",
+	"version": "1.0.0",
+	"author": "Jon Wolfe <@_JonWolfe>",
+	"publisher": "jonwolfe",
+	"license": "MIT",
+	"homepage": "http://atom.github.io/polymer-syntax",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jonathanwolfe/polymer-syntax.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jonathanwolfe/polymer-syntax/issues"
+	},
+	"engines": {
+		"vscode": ">=1.13.0"
+	},
+	"extensionDependencies": [
+		"vscode.html"
+	],
+	"categories": [
+		"Languages",
+		"Themes"
+	],
+	"galleryBanner": {
+		"color": "#31775a",
+		"theme": "dark"
+	},
+	"icon": "logo.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "polymer",
+				"aliases": [
+					"Polymer",
+					"polymer"
+				],
+				"extensions": [
+					"ejs",
+					"htm",
+					"html",
+					"kit",
+					"shtml",
+					"tmpl",
+					"tpl",
+					"xhtml"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "polymer",
+				"scopeName": "text.html.polymer",
+				"path": "./syntaxes/polymer-syntax.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "Polymer Syntax Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/polymer-theme.json"
+			}
+		]
+	}
 }

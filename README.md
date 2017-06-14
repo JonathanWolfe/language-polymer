@@ -1,26 +1,16 @@
 # language-polymer
 
-Polymer syntax highlighting for Atom & VS Code!
+Polymer syntax highlighting for VS Code!
 
 # Polymer Syntax Theme
 
 A syntax theme to be used with [language-polymer](https://github.com/jonathanwolfe/language-polymer) to give the best visual experience when working with [Polymer](https://polymer-project.org) or even [Web Components](https://www.webcomponents.org) in general.
-
-## Atom
-
-https://atom.io/packages/language-polymer
-
-Designed to look good with both [One Dark](https://atom.io/themes/one-dark-syntax) and [Atom Material](https://atom.io/themes/atom-material-syntax).
 
 ## VS Code
 
 https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer
 
 **To Enable**: You have to tell VS Code to associate the Polymer grammar with `.html` files either by the grammar selector in the bottom right corner of the editor or [via the settings](https://code.visualstudio.com/updates/vMarch#_editor) (language name is `polymer`).
-
-Most VS Code themes are pretty plain due to the tokenizer being very lack-luster early on and thus don't highlight much. New themes tend to fair better.
-
-Looks best with: [Material Ocean Next Theme +](https://marketplace.visualstudio.com/items?itemName=fthiagogv.theme-material-ocean-next-plus).
 
 ### History
 
