@@ -1,67 +1,67 @@
 {
-	"name": "polymer-syntax",
-	"displayName": "Polymer Syntax",
-	"description": "Syntax Highlighting and theming for Polymer components",
-	"version": "1.0.0",
-	"author": "Jon Wolfe <@_JonWolfe>",
-	"publisher": "jonwolfe",
-	"license": "MIT",
-	"homepage": "http://atom.github.io/polymer-syntax",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jonathanwolfe/polymer-syntax.git"
-	},
-	"bugs": {
-		"url": "https://github.com/jonathanwolfe/polymer-syntax/issues"
-	},
-	"engines": {
-		"vscode": ">=1.13.0"
-	},
-	"extensionDependencies": [
-		"vscode.html"
-	],
-	"categories": [
-		"Languages",
-		"Themes"
-	],
-	"galleryBanner": {
-		"color": "#31775a",
-		"theme": "dark"
-	},
-	"icon": "logo.png",
-	"contributes": {
-		"languages": [
-			{
-				"id": "polymer",
-				"aliases": [
-					"Polymer",
-					"polymer"
-				],
-				"extensions": [
-					"ejs",
-					"htm",
-					"html",
-					"kit",
-					"shtml",
-					"tmpl",
-					"tpl",
-					"xhtml"
-				]
-			}
-		],
-		"grammars": [
-			{
-				"language": "polymer",
-				"scopeName": "text.html.polymer",
-				"path": "./syntaxes/polymer-syntax.json"
-			}
-		],
-		"themes": [
-			{
-				"label": "Polymer Syntax Theme",
-				"uiTheme": "vs-dark",
-				"path": "./themes/polymer-theme.json"
-			}
-		]
-	}
+    "name": "polymer-syntax",
+    "displayName": "Polymer Syntax",
+    "description": "Syntax Highlighting and theming for Polymer components",
+    "version": "1.0.1",
+    "author": "Jon Wolfe <@_JonWolfe>",
+    "publisher": "jonwolfe",
+    "license": "MIT",
+    "homepage": "http://atom.github.io/polymer-syntax",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonathanwolfe/polymer-syntax.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jonathanwolfe/polymer-syntax/issues"
+    },
+    "engines": {
+        "vscode": ">=1.13.0"
+    },
+    "extensionDependencies": [
+        "vscode.html"
+    ],
+    "categories": [
+        "Languages",
+        "Themes"
+    ],
+    "galleryBanner": {
+        "color": "#31775a",
+        "theme": "dark"
+    },
+    "icon": "logo.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "polymer",
+                "aliases": [
+                    "Polymer",
+                    "polymer"
+                ],
+                "extensions": [
+                    "ejs",
+                    "htm",
+                    "html",
+                    "kit",
+                    "shtml",
+                    "tmpl",
+                    "tpl",
+                    "xhtml"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "polymer",
+                "scopeName": "text.html.polymer",
+                "path": "./syntaxes/polymer-syntax.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Polymer Syntax Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/polymer-theme.json"
+            }
+        ]
+    }
 }
