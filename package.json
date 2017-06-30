@@ -2,7 +2,7 @@
     "name": "language-polymer",
     "displayName": "Polymer Syntax",
     "description": "Syntax Highlighting and theming for Polymer components",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "Jon Wolfe <@_JonWolfe>",
     "publisher": "jonwolfe",
     "license": "MIT",

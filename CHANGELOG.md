@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "polymer-syntax" extension will be documented in this file.
 
+## 1.0.3
+- Fix some package.json links pointing to wrong URLs
+
 ## 1.0.2
 - Fix VSCE package name so extension properly updates
 
