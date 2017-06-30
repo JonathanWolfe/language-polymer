@@ -6,13 +6,13 @@
     "author": "Jon Wolfe <@_JonWolfe>",
     "publisher": "jonwolfe",
     "license": "MIT",
-    "homepage": "http://atom.github.io/polymer-syntax",
+    "homepage": "https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathanwolfe/polymer-syntax.git"
+        "url": "https://github.com/jonathanwolfe/language-polymer.git"
     },
     "bugs": {
-        "url": "https://github.com/jonathanwolfe/polymer-syntax/issues"
+        "url": "https://github.com/jonathanwolfe/language-polymer/issues"
     },
     "engines": {
         "vscode": ">=1.13.0"
