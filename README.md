@@ -4,7 +4,7 @@ Polymer syntax highlighting for VS Code!
 
 # Polymer Syntax Theme
 
-A syntax theme to be used with [language-polymer](https://github.com/jonathanwolfe/language-polymer) to give the best visual experience when working with [Polymer](https://polymer-project.org) or even [Web Components](https://www.webcomponents.org) in general.
+A syntax theme to be used with [language-polymer](https://github.com/jonathanwolfe/language-polymer) to give the best visual experience when working with [Polymer](https://www.polymer-project.org) or even [Web Components](https://www.webcomponents.org) in general.
 
 ## VS Code
 
