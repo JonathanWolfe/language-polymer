@@ -96,6 +96,44 @@
 			"include": "#embedded-code"
 		},
 		{
+			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=('sass'|\"sass\"))(?![^>]*/>)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.html.polymer"
+				},
+				"2": {
+					"name": "entity.name.tag.style.html.polymer"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.html.polymer"
+				}
+			},
+			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				},
+				{
+					"contentName": "source.sass.embedded.html.polymer",
+					"begin": "(>)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.html.polymer"
+						}
+					},
+					"end": "(?=</(?i:style))",
+					"patterns": [
+						{
+							"include": "#embedded-code"
+						},
+						{
+							"include": "source.sass"
+						}
+					]
+				}
+			]
+		},
+		{
 			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=('scss'|\"scss\"))(?![^/>]*/>\\s*$)",
 			"captures": {
 				"1": {
