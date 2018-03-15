@@ -97,10 +97,7 @@
 		},
 		{
 			"name": "♦ Embedded Source (Bright)",
-			"scope": [
-				"text source",
-				"meta.embedded"
-			],
+			"scope": ["text source", "meta.embedded"],
 			"settings": {
 				"background": "#B1B3BA08"
 			}
@@ -209,10 +206,7 @@
 		},
 		{
 			"name": "✘ Meta.tag.all",
-			"scope": [
-				"meta.tag",
-				"meta.tag entity"
-			],
+			"scope": ["meta.tag", "meta.tag entity"],
 			"settings": {
 				"foreground": "#00C0FF"
 			}
@@ -231,10 +225,7 @@
 		},
 		{
 			"name": "✘ Namespaces",
-			"scope": [
-				"entity.name.tag.namespace",
-				"entity.other.attribute-name.namespace"
-			],
+			"scope": ["entity.name.tag.namespace", "entity.other.attribute-name.namespace"],
 			"settings": {
 				"foreground": "#E18964"
 			}
@@ -310,10 +301,7 @@
 		},
 		{
 			"name": "⎇ diff.header",
-			"scope": [
-				"meta.diff",
-				"meta.diff.header"
-			],
+			"scope": ["meta.diff", "meta.diff.header"],
 			"settings": {
 				"background": "#00184F",
 				"foreground": "#F8F8F8"
@@ -375,10 +363,7 @@
 		},
 		{
 			"name": "Markup: Heading",
-			"scope": [
-				"markup.heading",
-				"markup.heading entity"
-			],
+			"scope": ["markup.heading", "markup.heading entity"],
 			"settings": {
 				"background": "#632D04",
 				"foreground": "#FEDCC5"
@@ -416,10 +401,7 @@
 		},
 		{
 			"name": "Log Entry",
-			"scope": [
-				"meta.line.entry.logfile",
-				"meta.line.exit.logfile"
-			],
+			"scope": ["meta.line.entry.logfile", "meta.line.exit.logfile"],
 			"settings": {
 				"background": "#EEEEEE29"
 			}
@@ -501,10 +483,7 @@
 		},
 		{
 			"name": "Quotes",
-			"scope": [
-				"punctuation.definition.string.begin",
-				"punctuation.definition.string.end"
-			],
+			"scope": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
 			"settings": {
 				"foreground": "#99CF50"
 			}
@@ -571,10 +550,7 @@
 		},
 		{
 			"name": "Polymer Bindings",
-			"scope": [
-				"binding.curly.html.polymer",
-				"binding.square.html.polymer"
-			],
+			"scope": ["binding.curly.html.polymer", "binding.square.html.polymer"],
 			"settings": {
 				"fontStyle": "italic",
 				"foreground": "#FFFFFF"
