@@ -17,8 +17,14 @@
   "engines": {
     "vscode": ">=1.13.0"
   },
-  "extensionDependencies": ["vscode.html"],
-  "categories": ["Languages", "Themes"],
+  "extensionDependencies": [
+    "vscode.html",
+    "vscode.html-language-features"
+  ],
+  "categories": [
+    "Languages",
+    "Themes"
+  ],
   "galleryBanner": {
     "color": "#31775a",
     "theme": "dark"
@@ -28,15 +34,27 @@
     "languages": [
       {
         "id": "polymer",
-        "aliases": ["Polymer", "polymer"],
-        "extensions": ["ejs", "htm", "html", "kit", "shtml", "tmpl", "tpl", "xhtml"]
+        "aliases": [
+          "Polymer",
+          "polymer"
+        ],
+        "extensions": [
+          "htm",
+          "html"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "polymer",
         "scopeName": "text.html.polymer",
-        "path": "./syntaxes/polymer-syntax.json"
+        "path": "./syntaxes/polymer-syntax.json",
+        "embeddedLanguages": {
+          "text.html": "html",
+          "source.css": "css",
+          "source.js": "javascript"
+        }
       }
     ],
     "themes": [
