@@ -8,14 +8,14 @@
 			"begin": "(<\\?)(xml)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.xml.html.polymer"
+					"name": "entity.name.tag.xml.html"
 				}
 			},
 			"end": "(\\?>)",
-			"name": "meta.tag.preprocessor.xml.html.polymer",
+			"name": "meta.tag.preprocessor.xml.html",
 			"patterns": [
 				{
 					"include": "#tag-generic-attribute"
@@ -32,15 +32,15 @@
 			"begin": "<!--",
 			"captures": {
 				"0": {
-					"name": "punctuation.definition.comment.html.polymer"
+					"name": "punctuation.definition.comment.html"
 				}
 			},
 			"end": "--\\s*>",
-			"name": "comment.block.html.polymer",
+			"name": "comment.block.html",
 			"patterns": [
 				{
 					"match": "--",
-					"name": "invalid.illegal.bad-comments-or-CDATA.html.polymer"
+					"name": "invalid.illegal.bad-comments-or-CDATA.html"
 				},
 				{
 					"include": "#embedded-code"
@@ -51,36 +51,36 @@
 			"begin": "<!",
 			"captures": {
 				"0": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"end": ">",
-			"name": "meta.tag.sgml.html.polymer",
+			"name": "meta.tag.sgml.html",
 			"patterns": [
 				{
 					"begin": "(?i:DOCTYPE)",
 					"captures": {
 						"1": {
-							"name": "entity.name.tag.doctype.html.polymer"
+							"name": "entity.name.tag.doctype.html"
 						}
 					},
 					"end": "(?=>)",
-					"name": "meta.tag.sgml.doctype.html.polymer",
+					"name": "meta.tag.sgml.doctype.html",
 					"patterns": [
 						{
 							"match": "\"[^\">]*\"",
-							"name": "string.quoted.double.doctype.identifiers-and-DTDs.html.polymer"
+							"name": "string.quoted.double.doctype.identifiers-and-DTDs.html"
 						}
 					]
 				},
 				{
 					"begin": "\\[CDATA\\[",
 					"end": "]](?=>)",
-					"name": "constant.other.inline-data.html.polymer"
+					"name": "constant.other.inline-data.html"
 				},
 				{
 					"match": "(\\s*)(?!--|>)\\S(\\s*)",
-					"name": "invalid.illegal.bad-comments-or-CDATA.html.polymer"
+					"name": "invalid.illegal.bad-comments-or-CDATA.html"
 				}
 			]
 		},
@@ -91,13 +91,13 @@
 			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=('less'|\"less\"))(?![^>]*/>)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.style.html.polymer"
+					"name": "entity.name.tag.style.html"
 				},
 				"3": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
@@ -106,11 +106,11 @@
 					"include": "#tag-stuff"
 				},
 				{
-					"contentName": "source.css.less.embedded.html.polymer",
+					"contentName": "source.css.less.embedded.html",
 					"begin": "(>)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
+							"name": "punctuation.definition.tag.html"
 						}
 					},
 					"end": "(?=</(?i:style))",
@@ -129,13 +129,13 @@
 			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=('sass'|\"sass\"))(?![^>]*/>)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.style.html.polymer"
+					"name": "entity.name.tag.style.html"
 				},
 				"3": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
@@ -144,11 +144,11 @@
 					"include": "#tag-stuff"
 				},
 				{
-					"contentName": "source.sass.embedded.html.polymer",
+					"contentName": "source.sass.embedded.html",
 					"begin": "(>)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
+							"name": "punctuation.definition.tag.html"
 						}
 					},
 					"end": "(?=</(?i:style))",
@@ -167,13 +167,13 @@
 			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=('scss'|\"scss\"))(?![^/>]*/>\\s*$)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.style.html.polymer"
+					"name": "entity.name.tag.style.html"
 				},
 				"3": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
@@ -182,11 +182,11 @@
 					"include": "#tag-stuff"
 				},
 				{
-					"contentName": "source.css.scss.embedded.html.polymer",
+					"contentName": "source.css.scss.embedded.html",
 					"begin": "(>)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
+							"name": "punctuation.definition.tag.html"
 						}
 					},
 					"end": "(?=</(?i:style))",
@@ -205,13 +205,13 @@
 			"begin": "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.style.html.polymer"
+					"name": "entity.name.tag.style.html"
 				},
 				"3": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"end": "(</)((?i:style))(>)(?:\\s*\\n)?",
@@ -220,11 +220,11 @@
 					"include": "#tag-stuff"
 				},
 				{
-					"contentName": "source.css.embedded.html.polymer",
+					"contentName": "source.css.embedded.html",
 					"begin": "(>)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
+							"name": "punctuation.definition.tag.html"
 						}
 					},
 					"end": "(?=</(?i:style))",
@@ -244,16 +244,16 @@
 				"(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)(?![^>]*(?i:type.?=.?text/((?!javascript).*)))",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.script.html.polymer"
+					"name": "entity.name.tag.script.html"
 				}
 			},
 			"end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
 			"endCaptures": {
 				"2": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
 			"patterns": [
@@ -261,14 +261,14 @@
 					"include": "#tag-stuff"
 				},
 				{
-					"contentName": "source.js.embedded.html.polymer",
+					"contentName": "source.js.embedded.html",
 					"begin": "(?<!</(?:script|SCRIPT))(>)",
 					"captures": {
 						"1": {
-							"name": "punctuation.definition.tag.html.polymer"
+							"name": "punctuation.definition.tag.html"
 						},
 						"2": {
-							"name": "entity.name.tag.script.html.polymer"
+							"name": "entity.name.tag.script.html"
 						}
 					},
 					"end": "(</)((?i:script))",
@@ -303,14 +303,14 @@
 			"begin": "(</?)((?i:body|head|html)(?=\\s|\\\\|>))",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.structure.any.html.polymer"
+					"name": "entity.name.tag.structure.any.html"
 				}
 			},
 			"end": "(>)",
-			"name": "meta.tag.structure.any.html.polymer",
+			"name": "meta.tag.structure.any.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -321,19 +321,19 @@
 			"begin": "(</?)((?i:dom-module|template|content|slot)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.begin.html.polymer"
+					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "entity.special.support.name.tag.html.polymer"
+					"name": "entity.special.support.name.tag.html"
 				}
 			},
 			"end": "(>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.end.html.polymer"
+					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "meta.tag.special.component.html.polymer",
+			"name": "meta.tag.special.component.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -345,19 +345,19 @@
 				"(</?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.begin.html.polymer"
+					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "entity.name.tag.block.any.html.polymer"
+					"name": "entity.name.tag.block.any.html"
 				}
 			},
 			"end": "(>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.end.html.polymer"
+					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "meta.tag.block.any.html.polymer",
+			"name": "meta.tag.block.any.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -369,19 +369,19 @@
 				"(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|map|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.begin.html.polymer"
+					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "entity.name.tag.inline.any.html.polymer"
+					"name": "entity.name.tag.inline.any.html"
 				}
 			},
 			"end": "((?: ?/)?>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.end.html.polymer"
+					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "meta.tag.inline.any.html.polymer",
+			"name": "meta.tag.inline.any.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -392,19 +392,19 @@
 			"begin": "(</?)((?i:link|meta)(?=\\s|\\\\|>))",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.begin.html.polymer"
+					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "entity.name.tag.link-meta.any.html.polymer"
+					"name": "entity.name.tag.link-meta.any.html"
 				}
 			},
 			"end": "((?: ?/)?>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.end.html.polymer"
+					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "meta.tag.inline.any.html.polymer",
+			"name": "meta.tag.inline.any.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -415,19 +415,19 @@
 			"begin": "(</?)([a-zA-Z0-9:\\-]+)",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.begin.html.polymer"
+					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "entity.name.tag.other.html.polymer"
+					"name": "entity.name.tag.other.html"
 				}
 			},
 			"end": "(>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.end.html.polymer"
+					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "meta.tag.other.html.polymer",
+			"name": "meta.tag.other.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -438,28 +438,28 @@
 			"begin": "(<)([a-zA-Z0-9:\\-]++)(?=[^>]*>)",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "entity.name.tag.html.polymer"
+					"name": "entity.name.tag.html"
 				}
 			},
 			"end": "(>(<)/)(\\2)(>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				},
 				"2": {
-					"name": "meta.scope.between-tag-pair.html.polymer"
+					"name": "meta.scope.between-tag-pair.html"
 				},
 				"3": {
-					"name": "entity.name.tag.html.polymer"
+					"name": "entity.name.tag.html"
 				},
 				"4": {
-					"name": "punctuation.definition.tag.html.polymer"
+					"name": "punctuation.definition.tag.html"
 				}
 			},
-			"name": "meta.tag.any.html.polymer",
+			"name": "meta.tag.any.html",
 			"patterns": [
 				{
 					"include": "#tag-stuff"
@@ -471,7 +471,7 @@
 		},
 		{
 			"match": "<>",
-			"name": "invalid.illegal.incomplete.html.polymer"
+			"name": "invalid.illegal.incomplete.html"
 		}
 	],
 	"repository": {
@@ -488,20 +488,20 @@
 					"match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
 					"captures": {
 						"1": {
-							"name": "punctuation.definition.entity.begin.html.polymer"
+							"name": "punctuation.definition.entity.begin.html"
 						},
 						"2": {
-							"name": "entity.name.entity.other.html.polymer"
+							"name": "entity.name.entity.other.html"
 						},
 						"3": {
-							"name": "punctuation.definition.entity.end.html.polymer"
+							"name": "punctuation.definition.entity.end.html"
 						}
 					},
-					"name": "constant.character.entity.html.polymer"
+					"name": "constant.character.entity.html"
 				},
 				{
 					"match": "&",
-					"name": "invalid.illegal.bad-ampersand.html.polymer"
+					"name": "invalid.illegal.bad-ampersand.html"
 				}
 			]
 		},
@@ -519,16 +519,16 @@
 			"begin": "\\{\\{",
 			"beginCaptures": {
 				"0": {
-					"name": "italic.punctuation.definition.binding.curly.begin.html.polymer"
+					"name": "italic.punctuation.definition.binding.curly.begin.html"
 				}
 			},
 			"end": "\\}\\}",
 			"endCaptures": {
 				"0": {
-					"name": "italic.punctuation.definition.binding.curly.end.html.polymer"
+					"name": "italic.punctuation.definition.binding.curly.end.html"
 				}
 			},
-			"name": "binding.curly.html.polymer",
+			"name": "binding.curly.html",
 			"patterns": [
 				{
 					"include": "#polymer-function"
@@ -545,16 +545,16 @@
 			"begin": "\\[\\[",
 			"beginCaptures": {
 				"0": {
-					"name": "italic.punctuation.definition.binding.square.begin.html.polymer"
+					"name": "italic.punctuation.definition.binding.square.begin.html"
 				}
 			},
 			"end": "\\]\\]",
 			"endCaptures": {
 				"0": {
-					"name": "italic.punctuation.definition.binding.square.end.html.polymer"
+					"name": "italic.punctuation.definition.binding.square.end.html"
 				}
 			},
-			"name": "binding.square.html.polymer",
+			"name": "binding.square.html",
 			"patterns": [
 				{
 					"include": "#polymer-function"
@@ -574,55 +574,55 @@
 			"begin": "([\\w.-]+)(\\()",
 			"beginCaptures": {
 				"1": {
-					"name": "support.function.js.polymer"
+					"name": "support.function.js"
 				},
 				"2": {
-					"name": "meta.brace.round.js.polymer"
+					"name": "meta.brace.round.js"
 				}
 			},
 			"end": "(\\))",
 			"endCaptures": {
 				"0": {
-					"name": "meta.brace.round.js.polymer"
+					"name": "meta.brace.round.js"
 				}
 			},
-			"name": "binding.function.html.polymer",
+			"name": "binding.function.html",
 			"patterns": [
 				{
 					"match": ",",
-					"name": "punctuation.separator.comma.js.html.polymer"
+					"name": "punctuation.separator.comma.js.html"
 				},
 				{
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "support.function.html.polymer",
+					"contentName": "support.function.html",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.double.html.polymer"
+					"name": "string.quoted.double.html"
 				},
 				{
 					"begin": "'",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
 					"contentName": "",
 					"end": "'",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.single.html.polymer"
+					"name": "string.quoted.single.html"
 				},
 				{
 					"include": "#polymer-conditional-negate"
@@ -637,31 +637,31 @@
 		},
 		"polymer-conditional-negate": {
 			"match": "!",
-			"name": "keyword.operator.logical.not.js.html.polymer"
+			"name": "keyword.operator.logical.not.js.html"
 		},
 		"polymer-variable-event": {
 			"match": "::[\\w.-]+",
-			"name": "support.function.event-handler.binding.js.html.polymer"
+			"name": "support.function.event-handler.binding.js.html"
 		},
 		"polymer-variable": {
 			"match": "[\\w.-]+",
 			"name":
-				"meta.definition.variable.js.html.polymer variable.other.readwrite.js.html.polymer"
+				"meta.definition.variable.js.html variable.other.readwrite.js.html"
 		},
 		"string-double-quoted": {
 			"begin": "\"",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.html.polymer"
+					"name": "punctuation.definition.string.begin.html"
 				}
 			},
 			"end": "\"",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.html.polymer"
+					"name": "punctuation.definition.string.end.html"
 				}
 			},
-			"name": "string.quoted.double.html.polymer",
+			"name": "string.quoted.double.html",
 			"patterns": [
 				{
 					"include": "#embedded-code"
@@ -675,16 +675,16 @@
 			"begin": "'",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.html.polymer"
+					"name": "punctuation.definition.string.begin.html"
 				}
 			},
 			"end": "'",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.html.polymer"
+					"name": "punctuation.definition.string.end.html"
 				}
 			},
-			"name": "string.quoted.single.html.polymer",
+			"name": "string.quoted.single.html",
 			"patterns": [
 				{
 					"include": "#embedded-code"
@@ -696,36 +696,36 @@
 		},
 		"tag-boolean-attribute": {
 			"match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)(?=\\s+|>)",
-			"name": "entity.other.attribute-name.boolean.html.polymer"
+			"name": "entity.other.attribute-name.boolean.html"
 		},
 		"tag-generic-attribute": {
 			"begin": "\\b([a-zA-Z0-9:-]+)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "entity.other.attribute-name.html.polymer"
+					"name": "entity.other.attribute-name.html"
 				},
 				"2": {
-					"name": "punctuation.separator.key-value.html.polymer"
+					"name": "punctuation.separator.key-value.html"
 				}
 			},
 			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
-			"name": "meta.attribute-with-value.other.html.polymer",
+			"name": "meta.attribute-with-value.other.html",
 			"patterns": [
 				{
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.other.html.polymer",
+					"contentName": "meta.toc-list.other.html",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.double.html.polymer",
+					"name": "string.quoted.double.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -739,17 +739,17 @@
 					"begin": "'",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.other.html.polymer",
+					"contentName": "meta.toc-list.other.html",
 					"end": "'",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.single.html.polymer",
+					"name": "string.quoted.single.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -762,11 +762,11 @@
 				{
 					"captures": {
 						"0": {
-							"name": "meta.toc-list.other.html.polymer"
+							"name": "meta.toc-list.other.html"
 						}
 					},
 					"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
-					"name": "string.unquoted.html.polymer"
+					"name": "string.unquoted.html"
 				}
 			]
 		},
@@ -774,30 +774,30 @@
 			"begin": "\\b(id)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "entity.other.attribute-name.id.html.polymer"
+					"name": "entity.other.attribute-name.id.html"
 				},
 				"2": {
-					"name": "punctuation.separator.key-value.html.polymer"
+					"name": "punctuation.separator.key-value.html"
 				}
 			},
 			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
-			"name": "meta.attribute-with-value.id.html.polymer",
+			"name": "meta.attribute-with-value.id.html",
 			"patterns": [
 				{
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.double.html.polymer",
+					"name": "string.quoted.double.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -811,17 +811,17 @@
 					"begin": "'",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html",
 					"end": "'",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.single.html.polymer",
+					"name": "string.quoted.single.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -834,11 +834,11 @@
 				{
 					"captures": {
 						"0": {
-							"name": "meta.toc-list.id.html.polymer"
+							"name": "meta.toc-list.id.html"
 						}
 					},
 					"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
-					"name": "string.unquoted.html.polymer"
+					"name": "string.unquoted.html"
 				}
 			]
 		},
@@ -846,46 +846,46 @@
 			"begin": "\\b(on-[a-zA-Z0-9:-]+)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "support.function.event-handler.attribute.js.html.polymer"
+					"name": "support.function.event-handler.attribute.js.html"
 				},
 				"2": {
-					"name": "punctuation.separator.key-value.html.polymer"
+					"name": "punctuation.separator.key-value.html"
 				}
 			},
 			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
-			"name": "meta.attribute-with-value.event.html.polymer",
+			"name": "meta.attribute-with-value.event.html",
 			"patterns": [
 				{
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "support.function.html.polymer",
+					"contentName": "support.function.html",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.double.html.polymer"
+					"name": "string.quoted.double.html"
 				},
 				{
 					"begin": "'",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "support.function.html.polymer",
+					"contentName": "support.function.html",
 					"end": "'",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.single.html.polymer"
+					"name": "string.quoted.single.html"
 				}
 			]
 		},
@@ -893,30 +893,30 @@
 			"begin": "\\b(index-as|as)\\b\\s*(\\$?=)",
 			"captures": {
 				"1": {
-					"name": "entity.other.attribute-name.as.html.polymer"
+					"name": "entity.other.attribute-name.as.html"
 				},
 				"2": {
-					"name": "punctuation.separator.key-value.html.polymer"
+					"name": "punctuation.separator.key-value.html"
 				}
 			},
 			"end": "(?!\\G)(?<='|\"|[^\\s<>/])",
-			"name": "meta.attribute-with-value.as.html.polymer",
+			"name": "meta.attribute-with-value.as.html",
 			"patterns": [
 				{
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html",
 					"end": "\"",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.double.html.polymer",
+					"name": "string.quoted.double.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -930,17 +930,17 @@
 					"begin": "'",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.html.polymer"
+							"name": "punctuation.definition.string.begin.html"
 						}
 					},
-					"contentName": "meta.toc-list.id.html.polymer",
+					"contentName": "meta.toc-list.id.html",
 					"end": "'",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.string.end.html.polymer"
+							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"name": "string.quoted.single.html.polymer",
+					"name": "string.quoted.single.html",
 					"patterns": [
 						{
 							"include": "#embedded-code"
@@ -953,11 +953,11 @@
 				{
 					"captures": {
 						"0": {
-							"name": "meta.toc-list.id.html.polymer"
+							"name": "meta.toc-list.id.html"
 						}
 					},
 					"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
-					"name": "string.unquoted.html.polymer"
+					"name": "string.unquoted.html"
 				}
 			]
 		},
@@ -994,7 +994,7 @@
 		},
 		"unquoted-attribute": {
 			"match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
-			"name": "string.unquoted.html.polymer"
+			"name": "string.unquoted.html"
 		}
 	}
 }
