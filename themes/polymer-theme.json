@@ -463,8 +463,8 @@
 		{
 			"name": "Script and Link tags",
 			"scope": [
-				"entity.name.tag.script.html.polymer",
-				"entity.name.tag.link-meta.any.html.polymer"
+				"entity.name.tag.script.html",
+				"entity.name.tag.link-meta.any.html"
 			],
 			"settings": {
 				"fontStyle": "underline",
@@ -474,8 +474,8 @@
 		{
 			"name": "Attribute Equal Sign",
 			"scope": [
-				"meta.tag.special.component.html.polymer",
-				"punctuation.separator.key-value.html.polymer"
+				"meta.tag.special.component.html",
+				"punctuation.separator.key-value.html"
 			],
 			"settings": {
 				"foreground": "#FFFFFF"
@@ -497,7 +497,7 @@
 		},
 		{
 			"name": "As/Index-As Attributes",
-			"scope": "entity.other.attribute-name.as.html.polymer",
+			"scope": "entity.other.attribute-name.as.html",
 			"settings": {
 				"foreground": "#F9EE98"
 			}
@@ -505,8 +505,8 @@
 		{
 			"name": "Event Attribute",
 			"scope": [
-				"support.function.event-handler.attribute.js.html.polymer",
-				"support.function.event-handler.binding.js.html.polymer"
+				"support.function.event-handler.attribute.js.html",
+				"support.function.event-handler.binding.js.html"
 			],
 			"settings": {
 				"foreground": "#FF9639"
@@ -521,28 +521,28 @@
 		},
 		{
 			"name": "Custom Element",
-			"scope": "entity.name.tag.other.html.polymer",
+			"scope": "entity.name.tag.other.html",
 			"settings": {
 				"foreground": "#689CFF"
 			}
 		},
 		{
 			"name": "Custom Element Reserved Tags",
-			"scope": "entity.special.support.name.tag.html.polymer",
+			"scope": "entity.special.support.name.tag.html",
 			"settings": {
 				"foreground": "#00FFBC"
 			}
 		},
 		{
 			"name": "Polymer Function",
-			"scope": "support.function.html.polymer",
+			"scope": "support.function.html",
 			"settings": {
 				"foreground": "#F1D950"
 			}
 		},
 		{
 			"name": "Polymer Variable",
-			"scope": "variable.other.readwrite.js.html.polymer",
+			"scope": "variable.other.readwrite.js.html",
 			"settings": {
 				"fontStyle": "italic",
 				"foreground": "#3BFFBC"
@@ -550,7 +550,7 @@
 		},
 		{
 			"name": "Polymer Bindings",
-			"scope": ["binding.curly.html.polymer", "binding.square.html.polymer"],
+			"scope": ["binding.curly.html", "binding.square.html"],
 			"settings": {
 				"fontStyle": "italic",
 				"foreground": "#FFFFFF"
@@ -558,7 +558,7 @@
 		},
 		{
 			"name": "Polymer Logical Not Operator",
-			"scope": "keyword.operator.logical.not.js.html.polymer",
+			"scope": "keyword.operator.logical.not.js.html",
 			"settings": {
 				"fontStyle": "italic",
 				"foreground": "#FF3E72"
