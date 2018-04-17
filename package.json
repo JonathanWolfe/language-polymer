@@ -1,68 +1,68 @@
 {
-  "name": "language-polymer",
-  "displayName": "Polymer Syntax",
-  "description": "Syntax Highlighting and theming for Polymer components",
-  "version": "1.0.4",
-  "author": "Jon Wolfe <@_JonWolfe>",
-  "publisher": "jonwolfe",
-  "license": "MIT",
-  "homepage": "https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonathanwolfe/language-polymer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jonathanwolfe/language-polymer/issues"
-  },
-  "engines": {
-    "vscode": ">=1.13.0"
-  },
-  "extensionDependencies": [
-    "vscode.html",
-    "vscode.html-language-features"
-  ],
-  "categories": [
-    "Languages",
-    "Themes"
-  ],
-  "galleryBanner": {
-    "color": "#31775a",
-    "theme": "dark"
-  },
-  "icon": "logo.png",
-  "contributes": {
-    "languages": [
-      {
-        "id": "polymer",
-        "aliases": [
-          "Polymer",
-          "polymer"
-        ],
-        "extensions": [
-          "htm",
-          "html"
-        ],
-        "configuration": "./language-configuration.json"
-      }
+    "name": "language-polymer",
+    "displayName": "Polymer Syntax",
+    "description": "Syntax Highlighting and theming for Polymer components",
+    "version": "1.1.0",
+    "author": "Jon Wolfe <@_JonWolfe>",
+    "publisher": "jonwolfe",
+    "license": "MIT",
+    "homepage": "https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonathanwolfe/language-polymer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jonathanwolfe/language-polymer/issues"
+    },
+    "engines": {
+        "vscode": ">=1.13.0"
+    },
+    "extensionDependencies": [
+        "vscode.html",
+        "vscode.html-language-features"
     ],
-    "grammars": [
-      {
-        "language": "polymer",
-        "scopeName": "text.html.polymer",
-        "path": "./syntaxes/polymer-syntax.json",
-        "embeddedLanguages": {
-          "text.html": "html",
-          "source.css": "css",
-          "source.js": "javascript"
-        }
-      }
+    "categories": [
+        "Languages",
+        "Themes"
     ],
-    "themes": [
-      {
-        "label": "Polymer Syntax Theme",
-        "uiTheme": "vs-dark",
-        "path": "./themes/polymer-theme.json"
-      }
-    ]
-  }
+    "galleryBanner": {
+        "color": "#31775a",
+        "theme": "dark"
+    },
+    "icon": "logo.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "polymer",
+                "aliases": [
+                    "Polymer",
+                    "polymer"
+                ],
+                "extensions": [
+                    "htm",
+                    "html"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "polymer",
+                "scopeName": "text.html.polymer",
+                "path": "./syntaxes/polymer-syntax.json",
+                "embeddedLanguages": {
+                    "text.html": "html",
+                    "source.css": "css",
+                    "source.js": "javascript"
+                }
+            }
+        ],
+        "themes": [
+            {
+                "label": "Polymer Syntax Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/polymer-theme.json"
+            }
+        ]
+    }
 }
